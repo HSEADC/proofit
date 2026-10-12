@@ -24,29 +24,32 @@ const chunksByFile = Object.fromEntries(
 function pageChunksPlugin() {
   return {
     name: 'page-chunks',
-    transformIndexHtml(html, ctx) {
-      const relFile = path
-        .relative(root, ctx.filename)
-        .split(path.sep)
-        .join('/')
-      const chunks = chunksByFile[relFile]
-      if (!chunks) return html
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html, ctx) {
+        const relFile = path
+          .relative(root, ctx.filename)
+          .split(path.sep)
+          .join('/')
+        const chunks = chunksByFile[relFile]
+        if (!chunks) return html
 
-      return {
-        html,
-        tags: chunks.map((src) => ({
-          tag: 'script',
-          attrs: { type: 'module', src },
-          injectTo: 'body'
-        }))
+        return {
+          html,
+          tags: chunks.map((src) => ({
+            tag: 'script',
+            attrs: { type: 'module', src },
+            injectTo: 'body'
+          }))
+        }
       }
     }
   }
 }
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ command, isPreview }) => ({
   root,
-  base: command === 'build' ? '/static-site-09-25/' : '/',
+  base: command === 'build' || isPreview ? '/static-site-09-25/' : '/',
   plugins: [pageChunksPlugin()],
   build: {
     outDir,
