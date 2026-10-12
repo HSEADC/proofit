@@ -11,9 +11,45 @@ const pages = {
     file: 'index.html',
     chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
   },
-  aloe: {
-    file: 'pages/articles/aloe.html',
-    chunks: ['/javascripts/allStyles.js']
+
+  about: {
+    file: 'pages/about.html'
+  },
+
+  cases: {
+    file: 'pages/cases.html'
+  },
+
+  dictionary: {
+    file: 'pages/dictionary.html'
+  },
+
+  podcasts: {
+    file: 'pages/podcasts.html'
+  },
+
+  vanishingUsers: {
+    file: 'pages/cases/vanishing__users.html'
+  },
+
+  conversionParadox: {
+    file: 'pages/cases/conversion__paradox.html'
+  },
+
+  dictionaryTest1: {
+    file: 'pages/dictionary/test__1.html'
+  },
+
+  dictionaryTest2: {
+    file: 'pages/dictionary/test__2.html'
+  },
+
+  podcast1: {
+    file: 'pages/podcasts/podcast__1.html'
+  },
+
+  podcast2: {
+    file: 'pages/podcasts/podcast__2.html'
   }
 }
 
@@ -49,7 +85,7 @@ function pageChunksPlugin() {
 
 export default defineConfig(({ command, isPreview }) => ({
   root,
-  base: command === 'build' || isPreview ? '/static-site-09-25/' : '/',
+  base: command === 'build' || isPreview ? '/does-it-work/' : '/',
   plugins: [pageChunksPlugin()],
   build: {
     outDir,

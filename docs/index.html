@@ -4,59 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная</title>
-    <script type="module" crossorigin src="/static-site-09-25/assets/main-lISHEsJK.js"></script>
-    <link rel="modulepreload" crossorigin href="/static-site-09-25/assets/allStyles-CzBoGt3r.js">
-    <link rel="stylesheet" crossorigin href="/static-site-09-25/assets/allStyles-B0nFdbxU.css">
+    <script
+      type="module"
+      crossorigin
+      src="/does-it-work/assets/main-DiIWx3il.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="/does-it-work/assets/main-B-ZO3pdg.css"
+    />
   </head>
   <body class="index">
-    <header class="header">
-      <a href="#header" class="header__logo">
-        <svg class="logo__icon" viewBox="0 0 200 200">
-          <g>
-            <ellipse cx="100" cy="52" rx="24" ry="46"></ellipse>
-            <ellipse
-              cx="100"
-              cy="52"
-              rx="24"
-              ry="46"
-              transform="rotate(72 100 100)"
-            ></ellipse>
-            <ellipse
-              cx="100"
-              cy="52"
-              rx="24"
-              ry="46"
-              transform="rotate(144 100 100)"
-            ></ellipse>
-            <ellipse
-              cx="100"
-              cy="52"
-              rx="24"
-              ry="46"
-              transform="rotate(216 100 100)"
-            ></ellipse>
-            <ellipse
-              cx="100"
-              cy="52"
-              rx="24"
-              ry="46"
-              transform="rotate(288 100 100)"
-            ></ellipse>
-          </g>
-        </svg>
-        <span class="logo__text">цветочный</span>
-      </a>
-      <nav class="header__nav">
-        <a href="#about" class="nav__link">О проекте</a>
-        <a href="#articles" class="nav__link">Статьи</a>
-        <a href="#form" class="nav__link">Форма</a>
-      </nav>
-    </header>
     <main>
+      <div class="home-sections">
+        <h1>Главная</h1>
+
+        <h2>Разделы</h2>
+        <ul>
+          <li><a href="pages/about.html">О нас</a></li>
+          <li><a href="pages/cases.html">Кейсы</a></li>
+          <li><a href="pages/podcasts.html">Подкасты</a></li>
+          <li><a href="pages/dictionary.html">Словарь</a></li>
+          <li><a href="#form">Обратная связь</a></li>
+        </ul>
+      </div>
       <section id="form" class="contact" aria-labelledby="contact-title">
-        <h1 id="contact-title" class="contact__title">
-          Давайте поговорим о растениях
-        </h1>
+        <h2 id="contact-title" class="contact__title">Обратная связь</h2>
         <p class="contact__intro">
           Есть вопрос или идея? Напишите нам — будем рады обратной связи.
         </p>
@@ -69,7 +43,7 @@
           <input
             type="hidden"
             name="_subject"
-            value="Сообщение с сайта «цветочный»"
+            value="Сообщение с сайта does-it-work"
           />
           <div class="contact-form__field">
             <label for="contact-email">Ваша почта</label>
@@ -102,30 +76,18 @@
               Проверьте сообщение и попробуйте отправить его снова.
             </p>
           </div>
-          <button
-            type="submit"
-            class="contact-form__submit"
-            data-fs-submit-btn
-          >
+          <button type="submit" class="contact-form__submit" data-fs-submit-btn>
             Отправить сообщение
           </button>
           <p data-fs-success role="status" tabindex="-1">
             Спасибо! Ваше сообщение отправлено.
           </p>
           <p data-fs-error role="alert" tabindex="-1">
-            Не удалось отправить сообщение. Проверьте подключение к интернету
-            и попробуйте ещё раз. Введённый текст сохранён в форме.
+            Не удалось отправить сообщение. Проверьте подключение к интернету и
+            попробуйте ещё раз. Введённый текст сохранён в форме.
           </p>
         </form>
       </section>
     </main>
-    <!-- <h1>Главная</h1>
-
-    <h2>Разделы</h2>
-    <ul>
-      <li><a href="pages/articles.html">Статьи</a></li>
-      <li><a href="pages/dictionary.html">Словарь</a></li>
-      <li><a href="pages/tests.html">Тесты</a></li>
-    </ul> -->
   </body>
 </html>
