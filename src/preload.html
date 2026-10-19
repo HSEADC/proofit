@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Скоро запуск</title>
+  </head>
+  <body class="preload">
+    <main>
+      <div class="home-sections">
+        <a class="brand" href="./preload.html">
+          <div class="logo-img"></div>
+          <h3>Пруфит</h3>
+        </a>
+        <ul>
+          <li><a href="pages/about.html">О нас</a></li>
+          <li><a href="pages/cases/conversion__paradox.html">Кейс</a></li>
+        </ul>
+      </div>
+      <section id="form" class="contact" aria-labelledby="contact-title">
+        <h1 id="contact-title" class="contact__title">
+          Пруфит — медиа с кейсами команд&nbsp;продуктовых&nbsp;аналитиков
+        </h1>
+        <p class="contact__intro">
+          Подпишитесь, чтобы не пропустить запуск,
+          новые&nbsp;статьи,&nbsp;подкасты&nbsp;и&nbsp;разборы&nbsp;кейсов&nbsp;продуктовых
+          аналитиков
+        </p>
+        <div data-fs-success role="status">
+          Спасибо! Ваше сообщение отправлено.
+        </div>
+        <div data-fs-error role="alert">
+          Не удалось отправить сообщение. Попробуйте ещё раз.
+        </div>
+        <form
+          id="my-form"
+          class="contact-form"
+          action="https://formspree.io/f/xljglvnd"
+          method="POST"
+        >
+          <div class="contact-form__field">
+            <label for="email">Электронная почта:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              aria-describedby="email-error"
+              data-fs-field
+              required
+            />
+            <span id="email-error" data-fs-error="email" role="alert">
+              Проверьте адрес электронной почты.
+            </span>
+          </div>
+          <div class="contact-form__field">
+            <label for="message">Сообщение:</label>
+            <input
+              type="text"
+              id="message"
+              name="message"
+              aria-describedby="message-error"
+              data-fs-field
+              required
+            />
+            <span id="message-error" data-fs-error="message" role="alert">
+              Проверьте сообщение и попробуйте отправить его снова.
+            </span>
+          </div>
+          <button type="submit" class="contact-form__submit" data-fs-submit-btn>
+            Отправить
+          </button>
+        </form>
+      </section>
+    </main>
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          (formspree.q = formspree.q || []).push(arguments);
+        };
+      formspree('initForm', {
+        formElement: '#my-form',
+        formId: 'xljglvnd',
+        useDefaultStyles: false
+      });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  </body>
+</html>
