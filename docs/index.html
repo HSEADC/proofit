@@ -4,16 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная</title>
-    <script
-      type="module"
-      crossorigin
-      src="/does-it-work/assets/main-DiIWx3il.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      crossorigin
-      href="/does-it-work/assets/main-B-ZO3pdg.css"
-    />
+    <script type="module" crossorigin src="/does-it-work/assets/main-C_K7aETL.js"></script>
+    <link rel="stylesheet" crossorigin href="/does-it-work/assets/main-DI7FGBec.css">
   </head>
   <body class="index">
     <main>
@@ -34,60 +26,65 @@
         <p class="contact__intro">
           Есть вопрос или идея? Напишите нам — будем рады обратной связи.
         </p>
+        <div data-fs-success role="status">
+          Спасибо! Ваше сообщение отправлено.
+        </div>
+        <div data-fs-error role="alert">
+          Не удалось отправить сообщение. Попробуйте ещё раз.
+        </div>
         <form
-          id="contact-form"
+          id="my-form"
           class="contact-form"
           action="https://formspree.io/f/xljglvnd"
           method="POST"
         >
-          <input
-            type="hidden"
-            name="_subject"
-            value="Сообщение с сайта does-it-work"
-          />
           <div class="contact-form__field">
-            <label for="contact-email">Ваша почта</label>
+            <label for="email">Электронная почта:</label>
             <input
               type="email"
-              id="contact-email"
+              id="email"
               name="email"
               autocomplete="email"
-              placeholder="you@example.com"
-              aria-describedby="contact-email-error"
+              aria-describedby="email-error"
               data-fs-field
               required
             />
-            <p id="contact-email-error" data-fs-error="email" role="alert">
+            <span id="email-error" data-fs-error="email" role="alert">
               Проверьте адрес электронной почты.
-            </p>
+            </span>
           </div>
           <div class="contact-form__field">
-            <label for="contact-message">Сообщение</label>
-            <textarea
-              id="contact-message"
+            <label for="message">Сообщение:</label>
+            <input
+              type="text"
+              id="message"
               name="message"
-              rows="5"
-              placeholder="О чём вы хотите нам рассказать?"
-              aria-describedby="contact-message-error"
+              aria-describedby="message-error"
               data-fs-field
               required
-            ></textarea>
-            <p id="contact-message-error" data-fs-error="message" role="alert">
+            />
+            <span id="message-error" data-fs-error="message" role="alert">
               Проверьте сообщение и попробуйте отправить его снова.
-            </p>
+            </span>
           </div>
           <button type="submit" class="contact-form__submit" data-fs-submit-btn>
-            Отправить сообщение
+            Отправить
           </button>
-          <p data-fs-success role="status" tabindex="-1">
-            Спасибо! Ваше сообщение отправлено.
-          </p>
-          <p data-fs-error role="alert" tabindex="-1">
-            Не удалось отправить сообщение. Проверьте подключение к интернету и
-            попробуйте ещё раз. Введённый текст сохранён в форме.
-          </p>
         </form>
       </section>
     </main>
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          (formspree.q = formspree.q || []).push(arguments);
+        };
+      formspree('initForm', {
+        formElement: '#my-form',
+        formId: 'xljglvnd',
+        useDefaultStyles: false
+      });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </body>
 </html>
