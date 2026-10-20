@@ -1,15 +1,20 @@
-import { fileURLToPath } from 'node:url'
-import path from 'node:path'
-import { defineConfig } from 'vite'
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { defineConfig } from 'vite';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const root = path.resolve(__dirname, 'src')
-const outDir = path.resolve(__dirname, 'docs')
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, 'src');
+const outDir = path.resolve(__dirname, 'docs');
 
 const pages = {
   main: {
     file: 'index.html',
     chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
+  },
+
+  preload: {
+    file: 'preload.html',
+    chunks: ['/javascripts/preload.js', '/javascripts/allStyles.js']
   },
 
   about: {
@@ -51,11 +56,11 @@ const pages = {
   podcast2: {
     file: 'pages/podcasts/podcast__2.html'
   }
-}
+};
 
 const chunksByFile = Object.fromEntries(
   Object.values(pages).map(({ file, chunks }) => [file, chunks])
-)
+);
 
 function pageChunksPlugin() {
   return {
@@ -66,9 +71,9 @@ function pageChunksPlugin() {
         const relFile = path
           .relative(root, ctx.filename)
           .split(path.sep)
-          .join('/')
-        const chunks = chunksByFile[relFile]
-        if (!chunks) return html
+          .join('/');
+        const chunks = chunksByFile[relFile];
+        if (!chunks) return html;
 
         return {
           html,
@@ -77,10 +82,10 @@ function pageChunksPlugin() {
             attrs: { type: 'module', src },
             injectTo: 'body'
           }))
-        }
+        };
       }
     }
-  }
+  };
 }
 
 export default defineConfig(({ command }) => ({
@@ -102,4 +107,4 @@ export default defineConfig(({ command }) => ({
   server: {
     open: true
   }
-}))
+}));

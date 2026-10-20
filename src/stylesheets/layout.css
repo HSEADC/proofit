@@ -2,7 +2,10 @@
   box-sizing: border-box;
 }
 :root {
-  --c-cream: #f7f1ef;
+  --c-blue: #0145fc;
+  --c-grey-header: #f5f5ff;
+  --c-grey-border: #dce3ea;
+  --c-grey-body: #fafcfe;
   --c-green: #1e3a2b;
   --c-pink: #ffc2d1;
   --c-liliac: #b9a6f2;
@@ -18,61 +21,84 @@ html {
   font-size: calc(1vw / 14.4);
 }
 body {
-  font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
+  font-family: Arial;
   font-size: 16rem;
-  background-color: rgb(255, 254, 255);
+  background-color: var(--c-grey-body);
+}
+h1,
+h2,
+h3 {
+  font-family: 'Onest';
+  font-weight: 700;
+  line-height: 1.1;
+}
+h1 {
+  font-size: 58rem;
+}
+h2 {
+  font-size: 38rem;
+}
+h3 {
+  font-size: 24rem;
+  text-decoration: none;
 }
 .index {
-  font-family: 'Manrope', Arial, Helvetica, sans-serif;
-  background-color: var(--c-cream);
   color: var(--c-green);
   line-height: 1.5;
 }
-
 .home-sections {
-  width: min(100%, 720px);
+  width: min(100%);
   margin: 0 auto;
-  padding: 32px 20px 0;
-  font-size: 16px;
+  padding: 16rem 40rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80rem;
+  background-color: var(--c-grey-header);
+  border-bottom: 1rem solid var(--c-grey-border);
 }
-
-.home-sections h1 {
-  font-size: 32px;
-  font-weight: 700;
+.brand {
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+  align-items: center;
 }
-
-.home-sections h2 {
-  margin: 16px 0 8px;
-  font-weight: 700;
+.home-sections .logo-img {
+  width: 36rem;
+  height: 36rem;
+  background-color: var(--c-blue);
+  border-radius: 100%;
 }
-
 .home-sections ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
+  gap: 36rem;
 }
-
 .home-sections a {
   color: var(--c-green);
+  text-decoration: none;
+  font-size: 16rem;
 }
 
 .contact {
-  width: min(100%, 720px);
+  width: min(100%);
   margin: 0 auto;
   padding: 48px 20px 64px;
   font-size: 16px;
   scroll-margin-top: 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-.contact__title {
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 700;
-  line-height: 1.2;
+.contact h1 {
+  text-align: center;
 }
-
 .contact__intro {
   margin: 20px 0 32px;
-  font-size: 18px;
+  font-size: 24rem;
+  width: 771rem;
+  text-align: center;
 }
 
 .contact-form {
