@@ -83,9 +83,9 @@ function pageChunksPlugin() {
   }
 }
 
-export default defineConfig(({ command, isPreview }) => ({
+export default defineConfig(({ command }) => ({
   root,
-  base: command === 'build' || isPreview ? '/does-it-work/' : '/',
+  base: command === 'build' ? '' : '',
   plugins: [pageChunksPlugin()],
   build: {
     outDir,
