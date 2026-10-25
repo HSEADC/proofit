@@ -107,11 +107,6 @@ h3 {
   padding: 0 24rem;
 
   text-align: center;
-
-  /* background-image: url('../images/dots-home.svg');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto; */
 }
 
 .contact__title {
@@ -245,7 +240,6 @@ h3 {
   color: #235b16;
 }
 
-/* Скрываем сообщения, пока Formspree их не активировал */
 .contact [data-fs-error]:not([data-fs-active]),
 .contact [data-fs-success]:not([data-fs-active]) {
   display: none;

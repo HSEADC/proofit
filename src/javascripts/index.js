@@ -7,7 +7,6 @@ if (contact && columnsContainer) {
   const columnCount = 14
   const dotsInRow = 5
 
-  // Элементы, на которые колонки не должны заходить
   const protectedElements = contact.querySelectorAll(
     '.contact__title, .contact__intro, ' +
       '.contact-form, .contact-form__status, .socials'
@@ -15,7 +14,6 @@ if (contact && columnsContainer) {
 
   const columns = []
 
-  // Создаём колонки один раз
   for (let index = 0; index < columnCount; index++) {
     const element = document.createElement('div')
 
@@ -26,14 +24,13 @@ if (contact && columnsContainer) {
 
     columns.push({
       element,
-      // Соседние колонки начинают движение в разные стороны
+
       phase: index % 2 === 0 ? 0 : Math.PI,
-      // Немного разная скорость
+
       duration: 6000 + index * 250
     })
   }
 
-  // Создаём один ряд из пяти точек
   function createRow() {
     const row = document.createElement('div')
     row.className = 'columns__row'
@@ -47,7 +44,6 @@ if (contact && columnsContainer) {
     return row
   }
 
-  // Добавляем или удаляем только нужное количество рядов
   function updateRows(element, count) {
     while (element.children.length < count) {
       element.prepend(createRow())
@@ -63,7 +59,6 @@ if (contact && columnsContainer) {
   const socials = contact.querySelector('.socials')
 
   function animate(time) {
-    // Переводим rem в пиксели с учётом масштаба страницы
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
 
     const dotSize = 6 * rem
@@ -79,7 +74,6 @@ if (contact && columnsContainer) {
       .map((element) => element.getBoundingClientRect())
       .filter((rect) => rect.width > 0 && rect.height > 0)
 
-    // Сначала измеряем все колонки, затем меняем HTML
     const columnRects = columns.map(({ element }) =>
       element.getBoundingClientRect()
     )
@@ -87,20 +81,17 @@ if (contact && columnsContainer) {
     const rowCounts = columns.map((column, index) => {
       const rect = columnRects[index]
 
-      // По одной крайней колонке с каждой стороны
       const isEdge = index === 0 || index === columns.length - 1
 
       const heightLimit = isEdge ? 360 * rem : maxHeight
 
       let availableHeight = Math.min(heightLimit, area.height)
 
-      // Проверяем, находится ли колонка под формой
       const isUnderForm =
         rect.right > formRect.left - safeGap &&
         rect.left < formRect.right + safeGap
 
       if (isUnderForm) {
-        // Верх колонки остаётся ниже иконок соцсетей
         const heightBelowSocials = area.bottom - socialsRect.bottom - 60
 
         availableHeight = Math.min(availableHeight, heightBelowSocials)
@@ -112,7 +103,6 @@ if (contact && columnsContainer) {
           rect.left < obstacle.right + safeGap
 
         if (overlapsHorizontally) {
-          // Верх колонки должен оставаться ниже элемента
           const heightBelowElement = area.bottom - obstacle.bottom - safeGap
 
           availableHeight = Math.min(availableHeight, heightBelowElement)
@@ -128,7 +118,6 @@ if (contact && columnsContainer) {
 
       const elapsed = time - startTime
 
-      // Значение плавно меняется от 0 до 1 и обратно
       const wave =
         (Math.sin((elapsed / column.duration) * Math.PI * 2 + column.phase) +
           1) /
@@ -143,7 +132,6 @@ if (contact && columnsContainer) {
       updateRows(column.element, rowCounts[index])
     })
 
-    // Запрашиваем следующий кадр — цикл бесконечный
     requestAnimationFrame(animate)
   }
 
