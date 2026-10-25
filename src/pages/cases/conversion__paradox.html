@@ -1,12 +1,409 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="case-page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Как «Сравни» связал аналитику и выручку — Пруфит</title>
   </head>
-  <body>
-    <h1>Conversion Paradox</h1>
-    <a href="../cases.html">Назад</a>
+
+  <body class="case">
+    <header class="home-sections">
+      <a class="brand" href="../../index.html">
+        <img class="logo-img" src="../../images/logo.svg" alt="" />
+        <span class="brand__name">Пруфит</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li>
+            <a href="../about.html">О&nbsp;нас</a>
+          </li>
+          <li>
+            <a href="./conversion__paradox.html" aria-current="page"> Кейс </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Первый экран -->
+
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="columns" aria-hidden="true">
+          <div class="columns__group columns__group--left"></div>
+          <div class="columns__group columns__group--right"></div>
+        </div>
+
+        <h1 id="case-title" class="case-hero__title">
+          Как «Сравни» объединил привлечение,<br />
+          конверсию и&nbsp;выручку в&nbsp;одной<br />
+          системе аналитики
+        </h1>
+
+        <div class="case-hero__summary">
+          <p class="case-hero__label">Описание</p>
+
+          <p class="case-hero__text">
+            Финансовый маркетплейс «Сравни» объединил данные из&nbsp;рекламных
+            систем, пользовательских событий и&nbsp;внутренних сервисов.
+            Разбираем, как компания выстроила сквозную аналитику для оценки
+            эффективности каналов, поведения пользователей и&nbsp;доходности
+            продуктов.
+          </p>
+        </div>
+      </section>
+
+      <div class="case-meta">
+        <dl class="case-facts">
+          <div class="case-facts__item">
+            <dt>Компания</dt>
+            <dd>Сравни</dd>
+          </div>
+
+          <div class="case-facts__item">
+            <dt>Продукт</dt>
+            <dd>Финансовый маркетплейс</dd>
+          </div>
+
+          <div class="case-facts__item">
+            <dt>Задача</dt>
+            <dd>Сквозная аналитика</dd>
+          </div>
+
+          <div class="case-facts__item">
+            <dt>Метрика</dt>
+            <dd>Атрибуция, BI</dd>
+          </div>
+        </dl>
+      </div>
+
+      <article class="case-body" aria-labelledby="case-title">
+        <section class="case-section">
+          <h2>Проблема разрозненных данных</h2>
+
+          <p>
+            «Сравни» — финансовый маркетплейс, который помогает пользователям
+            выбирать страховые, кредитные и&nbsp;другие финансовые продукты.
+            С&nbsp;ростом компании увеличилось количество продуктов,
+            маркетинговых каналов и&nbsp;пользовательских данных. Разрозненные
+            аналитические инструменты перестали обеспечивать бизнес необходимой
+            информацией.
+          </p>
+
+          <img
+            class="case-image"
+            src="../../images/case-data.png"
+            alt="Объединение данных о пользователе из нескольких источников"
+          />
+        </section>
+
+        <section class="case-section">
+          <h2>Как связали маркетинговые и&nbsp;продуктовые метрики</h2>
+
+          <p>
+            Команда разделила пользовательский путь на&nbsp;пять основных
+            этапов:
+          </p>
+
+          <p>
+            <strong>Привлечение.</strong>
+            Аналитики отслеживали показы, клики, стоимость переходов
+            и&nbsp;рекламные расходы. Это позволяло оценивать эффективность
+            отдельных кампаний и&nbsp;источников трафика.
+          </p>
+
+          <p>
+            <strong>Взаимодействие.</strong>
+            После перехода на&nbsp;сайт фиксировались действия пользователей:
+            просмотры страниц, применение фильтров и&nbsp;перемещения между
+            экранами. На&nbsp;основе событий можно было анализировать
+            пользовательские сценарии и&nbsp;строить воронки.
+          </p>
+
+          <p>
+            <strong class="case-term">Конверсия.</strong>
+            Команда отслеживала микроконверсии. Например, пользователь мог
+            рассчитать стоимость полиса ОСАГО, но&nbsp;не&nbsp;завершить
+            оформление. Такое действие позволяло выделить аудиторию для
+            последующих коммуникаций.
+          </p>
+
+          <p>
+            <strong class="case-term">Удержание.</strong>
+            Данные о&nbsp;предыдущих покупках использовались для возвращения
+            клиентов. Например, перед окончанием срока действия полиса ОСАГО
+            сервис мог предложить его продление.
+          </p>
+
+          <div class="case-grid">
+            <img
+              class="case-image"
+              src="../../images/case-journey.png"
+              alt="Этапы пользовательского пути от привлечения до покупки"
+            />
+
+            <img
+              class="case-image"
+              src="../../images/case-sources.png"
+              alt="Передача данных из разных источников в единое хранилище"
+            />
+          </div>
+
+          <p>
+            В&nbsp;результате аналитики получили возможность рассматривать
+            действия пользователя как связанные этапы одного процесса,
+            а&nbsp;не&nbsp;как независимые события.
+          </p>
+        </section>
+
+        <section class="case-section">
+          <h2>Как определяли эффективность каналов</h2>
+
+          <p>
+            Одна из&nbsp;задач заключалась в&nbsp;правильном распределении
+            конверсий между рекламными источниками. Пользователь мог впервые
+            перейти на&nbsp;сайт через поисковую рекламу, позднее вернуться
+            из&nbsp;другого канала и&nbsp;завершить покупку после
+            email-рассылки. Чтобы определить вклад рекламных каналов, «Сравни»
+            разработал собственный сервис атрибуции. На&nbsp;момент публикации
+            компания использовала две модели:
+          </p>
+
+          <div class="case-grid">
+            <p>
+              <strong>First Touch.</strong>
+              Конверсия приписывается первому источнику привлечения
+              пользователя.
+            </p>
+
+            <p>
+              <strong>Last Click.</strong>
+              Конверсия приписывается последнему рекламному взаимодействию перед
+              покупкой.
+            </p>
+          </div>
+
+          <p>
+            Использование разных моделей помогало оценивать эффективность
+            каналов с&nbsp;нескольких точек зрения. При этом
+            <span class="case-term">атрибуция</span>
+            распределяла ценность конверсий по&nbsp;определённым правилам,
+            но&nbsp;не&nbsp;доказывала причинное влияние рекламы
+            на&nbsp;покупки.
+          </p>
+        </section>
+
+        <section class="case-section">
+          <h2>Как конверсию связали с&nbsp;выручкой</h2>
+
+          <p>
+            «Сравни» сотрудничает с&nbsp;банками и&nbsp;другими финансовыми
+            организациями на&nbsp;разных условиях. Одни партнёры оплачивают
+            полученную заявку, другие — одобренную, третьи — только выданный
+            кредит.
+          </p>
+
+          <p>
+            Для расчёта доходности компания разработала собственный сервис,
+            который через <span class="case-term">API</span>
+            получал статусы заявок от&nbsp;партнёров и&nbsp;определял
+            фактическую выручку. Такие системы рассчитывали прогнозную выручку,
+            необходимую для ежедневной работы маркетинга.
+          </p>
+
+          <div class="case-grid">
+            <img
+              class="case-image"
+              src="../../images/case-api.png"
+              alt="Получение статусов заявок через API и расчёт дохода"
+            />
+
+            <img
+              class="case-image"
+              src="../../images/case-revenue.png"
+              alt="Сопоставление показателей и динамики выручки"
+            />
+          </div>
+
+          <p>
+            Эти данные позволяли сопоставлять доход с&nbsp;затратами
+            на&nbsp;привлечение и&nbsp;рассчитывать ROMI. Таким образом,
+            эффективность каналов можно было оценивать
+            по&nbsp;их&nbsp;финансовому результату.
+          </p>
+        </section>
+
+        <section class="case-section">
+          <h2>Какие инструменты использовали аналитики</h2>
+
+          <p>
+            Чтобы объединить информацию из&nbsp;разных источников, компания
+            внедрила единое хранилище данных Snowflake. В&nbsp;него поступали
+            данные рекламных систем, пользовательских событий,
+            <span class="case-term">CRM</span> и&nbsp;внутренних сервисов. Для
+            каждого направления использовались специализированные инструменты.
+            На&nbsp;момент публикации архитектура включала:
+          </p>
+
+          <div class="case-grid">
+            <p>
+              <strong>AppMetrica, AppsFlyer и&nbsp;myTracker.</strong>
+              Аналитика мобильного приложения и&nbsp;источники трафика.
+            </p>
+
+            <p>
+              <strong>Google Analytics 360 и&nbsp;Яндекс Метрика.</strong>
+              Анализ поведения пользователей на&nbsp;сайте.
+            </p>
+
+            <p>
+              <strong>Собственная платформа A/B-тестирования.</strong>
+              Проверка продуктовых гипотез.
+            </p>
+
+            <p>
+              <strong>Exponea.</strong>
+              Управление CRM-коммуникациями и&nbsp;удержанием.
+            </p>
+
+            <p>
+              <strong>Power BI.</strong>
+              Создание отчётов и&nbsp;дашбордов.
+            </p>
+          </div>
+
+          <p>
+            Компания также разделила аналитиков на&nbsp;команды маркетинговой,
+            продуктовой и&nbsp;BI-аналитики, отдельно выделив направление
+            экспериментов и&nbsp;команду работы с&nbsp;данными. Это позволило
+            распределить ответственность за&nbsp;сбор, обработку и&nbsp;анализ
+            информации между специалистами.
+          </p>
+        </section>
+
+        <section class="case-result">
+          <h2>Результат</h2>
+
+          <p>
+            «Сравни» выстроил систему, объединяющую маркетинговые расходы,
+            пользовательское поведение, конверсии, выручку и&nbsp;повторные
+            обращения. По&nbsp;оценке компании, одним из&nbsp;основных
+            результатов стало повышение эффективности работы аналитических
+            команд благодаря распределению зон ответственности. Общая
+            инфраструктура обеспечила возможность строить отчёты на&nbsp;основе
+            данных из&nbsp;разных систем и&nbsp;использовать их&nbsp;для
+            продуктовых и&nbsp;маркетинговых решений.
+          </p>
+        </section>
+      </article>
+
+      <section class="subscribe" aria-labelledby="subscribe-title">
+        <h2 id="subscribe-title" class="subscribe__title">
+          Узнайте первыми о&nbsp;запуске!
+        </h2>
+
+        <p class="subscribe__text">
+          Подпишитесь, чтобы не&nbsp;пропустить запуск, новые статьи
+          и&nbsp;подкасты о&nbsp;кейсах продуктовых аналитиков.
+        </p>
+
+        <form
+          id="case-form"
+          class="subscribe__form"
+          action="https://formspree.io/f/xljglvnd"
+          method="POST"
+        >
+          <div class="subscribe__field">
+            <label class="visually-hidden" for="case-email">
+              Электронная почта
+            </label>
+
+            <input
+              class="subscribe__input"
+              type="email"
+              id="case-email"
+              name="email"
+              placeholder="Ваш email"
+              autocomplete="email"
+              aria-describedby="case-email-error"
+              data-fs-field
+              required
+            />
+          </div>
+
+          <button class="subscribe__button" type="submit" data-fs-submit-btn>
+            Подписаться
+          </button>
+
+          <div class="subscribe__status">
+            <span id="case-email-error" data-fs-error="email" role="alert">
+              Проверьте адрес электронной почты.
+            </span>
+
+            <div data-fs-success role="status">
+              Спасибо! Заявка на&nbsp;подписку отправлена.
+            </div>
+
+            <div data-fs-error role="alert">
+              Не&nbsp;удалось отправить заявку. Попробуйте ещё&nbsp;раз.
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__intro">
+        <h2 class="site-footer__title">
+          Следите за&nbsp;развитием индустрии через реальные кейсы с&nbsp;нами!
+        </h2>
+
+        <a class="brand" href="../../index.html">
+          <img class="logo-img" src="../../images/logo.svg" alt="" />
+          <span class="brand__name">Пруфит</span>
+        </a>
+      </div>
+
+      <div class="site-footer__links">
+        <nav class="footer-nav" aria-label="Навигация в подвале">
+          <p class="footer-nav__title">Навигация</p>
+
+          <ul class="footer-nav__list">
+            <li><a href="../../index.html">Главная</a></li>
+            <li><a href="../about.html">О&nbsp;нас</a></li>
+            <li>
+              <a href="./conversion__paradox.html" aria-current="page">
+                Кейс
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Социальные сети">
+          <p class="footer-nav__title">Общение</p>
+
+          <ul class="footer-nav__list">
+            <li><a href="https://t.me/proofit_media">Telegram</a></li>
+            <li><a href="https://vk.ru/proofit_media">ВКонтакте</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          ;(formspree.q = formspree.q || []).push(arguments)
+        }
+
+      formspree('initForm', {
+        formElement: '#case-form',
+        formId: 'xljglvnd',
+        useDefaultStyles: false
+      })
+    </script>
+
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </body>
 </html>

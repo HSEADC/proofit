@@ -9,19 +9,35 @@ const outDir = path.resolve(__dirname, 'docs')
 const pages = {
   main: {
     file: 'index.html',
-    chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
+    chunks: [
+      '/javascripts/index.js',
+      '/javascripts/allStyles.js',
+      '/javascripts/allStyles.js'
+    ]
   },
 
   about: {
     file: 'pages/about.html',
-    chunks: ['/javascripts/allStyles.js', '/javascripts/about.js']
+    chunks: [
+      '/javascripts/allStyles.js',
+      '/javascripts/about.js',
+      '/javascripts/allStyles.js'
+    ]
   },
 
   cases: {
     file: 'pages/cases.html',
     chunks: ['/javascripts/allStyles.js']
   },
-
+  conversionParadox: {
+    file: 'pages/cases/conversion__paradox.html',
+    chunks: [
+      '/javascripts/allStyles.js',
+      '/javascripts/about.js',
+      '/javascripts/allStyles.js',
+      '/javascripts/article-progress.js'
+    ]
+  },
   dictionary: {
     file: 'pages/dictionary.html'
   },
@@ -32,10 +48,6 @@ const pages = {
 
   vanishingUsers: {
     file: 'pages/cases/vanishing__users.html'
-  },
-
-  conversionParadox: {
-    file: 'pages/cases/conversion__paradox.html'
   },
 
   dictionaryTest1: {

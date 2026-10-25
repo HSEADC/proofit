@@ -1,26 +1,42 @@
-const hero = document.querySelector('.about-hero')
+import './button-text.js'
+
+const hero = document.querySelector('.about-hero, .case-hero')
 const container = hero?.querySelector('.columns')
 
 const leftGroup = container?.querySelector('.columns__group--left')
+
 const rightGroup = container?.querySelector('.columns__group--right')
 
 if (hero && container && leftGroup && rightGroup) {
-  const settings = [
-    { color: '#D9E4FF', start: 6, min: 4, max: 10 },
-    { color: '#B8EF31', start: 17, min: 12, max: 21 },
-    { color: '#93B2FF', start: 12, min: 6, max: 15 },
-    { color: '#D9E4FF', start: 5, min: 2, max: 9 },
-    { color: '#B8EF31', start: 2, min: 0, max: 4 },
+  const isCase = hero.classList.contains('case-hero')
 
-    { color: '#D9E4FF', start: 3, min: 0, max: 5 },
-    { color: '#B8EF31', start: 7, min: 3, max: 11 },
-    { color: '#93B2FF', start: 10, min: 5, max: 14 },
-    { color: '#B8EF31', start: 21, min: 15, max: 25 },
-    { color: '#D9E4FF', start: 8, min: 4, max: 11 }
-  ]
+  const settings = isCase
+    ? [
+        { color: '#E2FF98', start: 26, min: 20, max: 30 },
+        { color: '#B8EF31', start: 15, min: 10, max: 18 },
+        { color: '#E2FF98', start: 7, min: 3, max: 10 },
+
+        { color: '#E2FF98', start: 7, min: 3, max: 10 },
+        { color: '#B8EF31', start: 15, min: 10, max: 18 },
+        { color: '#E2FF98', start: 26, min: 20, max: 30 }
+      ]
+    : [
+        { color: '#D9E4FF', start: 6, min: 4, max: 10 },
+        { color: '#B8EF31', start: 17, min: 12, max: 21 },
+        { color: '#93B2FF', start: 12, min: 6, max: 15 },
+        { color: '#D9E4FF', start: 5, min: 2, max: 9 },
+        { color: '#B8EF31', start: 2, min: 0, max: 4 },
+
+        { color: '#D9E4FF', start: 3, min: 0, max: 5 },
+        { color: '#B8EF31', start: 7, min: 3, max: 11 },
+        { color: '#93B2FF', start: 10, min: 5, max: 14 },
+        { color: '#B8EF31', start: 21, min: 15, max: 25 },
+        { color: '#D9E4FF', start: 8, min: 4, max: 11 }
+      ]
 
   const protectedElements = hero.querySelectorAll(
-    '.about-hero__title, .about-hero__text'
+    '.about-hero__title, .about-hero__text, ' +
+      '.case-hero__title, .case-hero__summary'
   )
 
   const columns = settings.map((setting, index) => {
@@ -28,7 +44,7 @@ if (hero && container && leftGroup && rightGroup) {
     element.className = 'columns__item'
     element.style.color = setting.color
 
-    const group = index < 5 ? leftGroup : rightGroup
+    const group = index < settings.length / 2 ? leftGroup : rightGroup
     group.append(element)
 
     const progress = (setting.start - setting.min) / (setting.max - setting.min)

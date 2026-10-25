@@ -1,3 +1,5 @@
+import './button-text.js'
+
 const contact = document.querySelector('.contact')
 const columnsContainer = document.querySelector('.columns')
 
