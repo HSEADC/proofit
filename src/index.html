@@ -3,6 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Скоро запуск</title>
+  </head>
+  <body class="index">
+    <header class="home-sections">
+      <a class="brand" href="./index.html">
+        <img class="logo-img" src="./images/logo.svg" alt="логотип" />
+        <span class="brand__name">Пруфит</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="./pages/about.html">О нас</a></li>
+          <li>
+            <a href="./pages/cases/conversion__paradox.html">Кейс</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="form" class="contact" aria-labelledby="contact-title">
+        <div class="columns" aria-hidden="true"></div>
+
+        <h1 id="contact-title" class="contact__title">
+          Пруфит — медиа с кейсами
+          <span>команд продуктовых аналитиков</span>
+        </h1>
+
+        <p class="contact__intro">
+          Подпишитесь, чтобы не пропустить запуск,
+          <span>
+            новые статьи, подкасты и разборы кейсов продуктовых аналитиков
+          </span>
+        </p>
+
+        <form
+          id="my-form"
+          class="contact-form"
+          action="https://formspree.io/f/xljglvnd"
+          method="POST"
+        >
+          <div class="contact-form__field">
+            <label class="visually-hidden" for="email">
+              Электронная почта
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your_email@yandex.ru"
+              autocomplete="email"
+              aria-describedby="email-error"
+              data-fs-field
+              required
+            />
+          </div>
+
+          <button type="submit" class="contact-form__submit" data-fs-submit-btn>
+            Подписаться
+          </button>
+
+          <div class="contact-form__status">
+            <span id="email-error" data-fs-error="email" role="alert">
+              Проверьте адрес электронной почты.
+            </span>
+
+            <div data-fs-success role="status">
+              Спасибо! Заявка на подписку отправлена.
+            </div>
+
+            <div data-fs-error role="alert">
+              Не удалось отправить заявку. Попробуйте ещё раз.
+            </div>
+          </div>
+        </form>
+
+        <div class="socials" aria-label="Социальные сети">
+          <a
+            class="socials__link"
+            href="https://t.me/proofit_media"
+            aria-label="Telegram"
+          >
+            <img src="./images/telegram.svg" alt="иконка телеграма" />
+          </a>
+
+          <a
+            class="socials__link"
+            href="https://vk.ru/proofit_media"
+            aria-label="ВКонтакте"
+          >
+            <img src="./images/vk.svg" alt="иконка вк" />
+          </a>
+        </div>
+      </section>
+    </main>
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          ;(formspree.q = formspree.q || []).push(arguments)
+        }
+      formspree('initForm', {
+        formElement: '#my-form',
+        formId: 'xljglvnd',
+        useDefaultStyles: false
+      })
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  </body>
+</html>
+
+<!-- <!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная</title>
   </head>
   <body class="index">
@@ -85,4 +202,4 @@
     </script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </body>
-</html>
+</html> -->
