@@ -14,7 +14,7 @@ const pages = {
 
   about: {
     file: 'pages/about.html',
-    chunks: ['/javascripts/allStyles.js']
+    chunks: ['/javascripts/allStyles.js', '/javascripts/about.js']
   },
 
   cases: {

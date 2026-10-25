@@ -1,20 +1,261 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="about-page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>О нас — Пруфит</title>
   </head>
-  <body>
-    <h1>О нас</h1>
 
-    <h2>Разделы</h2>
-    <ul>
-      <li><a href="../index.html">Главная</a></li>
-      <li><a href="./about.html">О нас</a></li>
-      <li><a href="./cases.html">Кейсы</a></li>
-      <li><a href="./podcasts.html">Подкасты</a></li>
-      <li><a href="./dictionary.html">Словарь</a></li>
-    </ul>
+  <body class="about">
+    <header class="home-sections">
+      <a class="brand" href="../index.html">
+        <img class="logo-img" src="../images/logo.svg" alt="" />
+        <span class="brand__name">Пруфит</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li>
+            <a href="./about.html" aria-current="page">О нас</a>
+          </li>
+          <li>
+            <a href="./cases/conversion__paradox.html">Кейс</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-hero" aria-labelledby="about-title">
+        <div class="columns" aria-hidden="true">
+          <div class="columns__group columns__group--left"></div>
+          <div class="columns__group columns__group--right"></div>
+        </div>
+
+        <h1 id="about-title" class="about-hero__title">
+          Практическое медиа<br />
+          о продуктовой аналитике
+        </h1>
+
+        <p class="about-hero__text">
+          Кейсы, разборы и практические<br />
+          подходы к продуктовому анализу
+        </p>
+      </section>
+
+      <section class="features" aria-labelledby="features-title">
+        <h2 id="features-title" class="about__heading">
+          Погружаемся вместе<br />
+          в продуктовую аналитику
+        </h2>
+
+        <div class="features__list">
+          <article class="feature">
+            <img
+              class="feature__icon"
+              src="../images/cases.svg"
+              alt="иконка кейса"
+            />
+
+            <h3 class="feature__title">Реальные кейсы</h3>
+
+            <p class="feature__text">
+              Рассказываем про задачи<br />
+              из практики продуктовых команд
+            </p>
+          </article>
+
+          <article class="feature">
+            <img
+              class="feature__icon"
+              src="../images/analysis.svg"
+              alt="иконка аналитики"
+            />
+
+            <h3 class="feature__title">Продуктовый разбор</h3>
+
+            <p class="feature__text">
+              Показываем ход мысли, инструменты, данные и ключевые выводы
+            </p>
+          </article>
+
+          <article class="feature">
+            <img
+              class="feature__icon"
+              src="../images/practice.svg"
+              alt="иконка практики"
+            />
+
+            <h3 class="feature__title">Практика</h3>
+
+            <p class="feature__text">
+              Показываем идеи и подходы,<br />
+              на которые можно опираться
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="team" aria-labelledby="team-title">
+        <h2 id="team-title" class="about__heading">
+          Авторы проекта и эксперты
+        </h2>
+
+        <div class="team__list">
+          <article class="person">
+            <img
+              class="person__photo"
+              src="../images/daria.png"
+              alt="Дарья Морозова"
+            />
+
+            <div class="person__info">
+              <h3 class="person__name">Дарья Морозова</h3>
+              <p class="person__text">
+                Исследование аудитории, развитие соцсетей и адаптивности
+                проекта.
+              </p>
+            </div>
+          </article>
+
+          <article class="person">
+            <img
+              class="person__photo"
+              src="../images/polina.png"
+              alt="Полина Брусова"
+            />
+
+            <div class="person__info">
+              <h3 class="person__name">Полина Брусова</h3>
+              <p class="person__text">
+                Исследование аудитории, UX/UI-дизайн и прототипирование сайта.
+              </p>
+            </div>
+          </article>
+
+          <article class="person">
+            <img
+              class="person__photo"
+              src="../images/maria.png"
+              alt="Мария Драч"
+            />
+
+            <div class="person__info">
+              <h3 class="person__name">Мария Драч</h3>
+              <p class="person__text">
+                Исследование аудитории, анализ данных и UX/UI-дизайн.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="subscribe" aria-labelledby="subscribe-title">
+        <h2 id="subscribe-title" class="subscribe__title">
+          Узнайте первыми о запуске!
+        </h2>
+
+        <p class="subscribe__text">
+          Подпишитесь, чтобы не пропустить запуск, новые
+          статьи&nbsp;и&nbsp;подкасты о кейсах продуктовых аналитиков.
+        </p>
+
+        <form
+          id="about-form"
+          class="subscribe__form"
+          action="https://formspree.io/f/xljglvnd"
+          method="POST"
+        >
+          <div class="subscribe__field">
+            <label class="visually-hidden" for="about-email">
+              Электронная почта
+            </label>
+
+            <input
+              class="subscribe__input"
+              type="email"
+              id="about-email"
+              name="email"
+              placeholder="Ваш email"
+              autocomplete="email"
+              aria-describedby="about-email-error"
+              data-fs-field
+              required
+            />
+          </div>
+
+          <button class="subscribe__button" type="submit" data-fs-submit-btn>
+            Подписаться
+          </button>
+
+          <div class="subscribe__status">
+            <span id="about-email-error" data-fs-error="email" role="alert">
+              Проверьте адрес электронной почты.
+            </span>
+
+            <div data-fs-success role="status">
+              Спасибо! Заявка на подписку отправлена.
+            </div>
+
+            <div data-fs-error role="alert">
+              Не удалось отправить заявку. Попробуйте ещё раз.
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__intro">
+        <h2 class="site-footer__title">
+          Следите за развитием индустрии через реальные кейсы с нами!
+        </h2>
+
+        <a class="brand" href="../index.html">
+          <img class="logo-img" src="../images/logo.svg" alt="" />
+          <span class="brand__name">Пруфит</span>
+        </a>
+      </div>
+
+      <div class="site-footer__links">
+        <nav class="footer-nav" aria-label="Навигация в подвале">
+          <p class="footer-nav__title">Навигация</p>
+
+          <ul class="footer-nav__list">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="./about.html">О нас</a></li>
+            <li><a href="./cases.html">Кейс</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Социальные сети">
+          <p class="footer-nav__title">Общение</p>
+
+          <ul class="footer-nav__list">
+            <li>
+              <a href="https://t.me/proofit_media">Telegram</a>
+            </li>
+            <li>
+              <a href="https://vk.ru/proofit_media">ВКонтакте</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          ;(formspree.q = formspree.q || []).push(arguments)
+        }
+
+      formspree('initForm', {
+        formElement: '#about-form',
+        formId: 'xljglvnd',
+        useDefaultStyles: false
+      })
+    </script>
+
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </body>
 </html>

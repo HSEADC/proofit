@@ -59,7 +59,7 @@ if (contact && columnsContainer) {
   const socials = contact.querySelector('.socials')
 
   function animate(time) {
-    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const rem = parseFloat(getComputedStyle(columns[0].element).rowGap) / 6
 
     const dotSize = 6 * rem
     const rowGap = 6 * rem
@@ -92,7 +92,7 @@ if (contact && columnsContainer) {
         rect.left < formRect.right + safeGap
 
       if (isUnderForm) {
-        const heightBelowSocials = area.bottom - socialsRect.bottom - 60
+        const heightBelowSocials = area.bottom - socialsRect.bottom - 60 * rem
 
         availableHeight = Math.min(availableHeight, heightBelowSocials)
       }
