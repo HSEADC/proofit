@@ -12,7 +12,8 @@ const pages = {
     chunks: [
       '/javascripts/index.js',
       '/javascripts/allStyles.js',
-      '/javascripts/allStyles.js'
+      '/javascripts/allStyles.js',
+      '/javascripts/menu.js'
     ]
   },
 
@@ -21,7 +22,8 @@ const pages = {
     chunks: [
       '/javascripts/allStyles.js',
       '/javascripts/about.js',
-      '/javascripts/allStyles.js'
+      '/javascripts/allStyles.js',
+      '/javascripts/menu.js'
     ]
   },
 
@@ -35,7 +37,8 @@ const pages = {
       '/javascripts/allStyles.js',
       '/javascripts/about.js',
       '/javascripts/allStyles.js',
-      '/javascripts/article-progress.js'
+      '/javascripts/article-progress.js',
+      '/javascripts/menu.js'
     ]
   },
   dictionary: {

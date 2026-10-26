@@ -1031,3 +1031,14 @@ h3 {
 .article-progress__button[aria-current='location'] .article-progress__dot {
   transform: scale(1.4);
 }
+.about > .home-sections,
+.case > .home-sections {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+html.about-page,
+html.case-page {
+  scroll-padding-top: calc(var(--header-height, 69rem) + var(--space-16));
+}

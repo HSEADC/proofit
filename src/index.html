@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Скоро запуск</title>
+    <link rel="icon" href="./images/icon.png" type="image/png" />
+    <link rel="icon" href="./images/icon.ico" type="image/x-icon" />
   </head>
   <body class="index">
     <header class="home-sections">
@@ -12,8 +14,38 @@
         <span class="brand__name">Пруфит</span>
       </a>
 
-      <nav aria-label="Основная навигация">
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Открыть меню"
+        aria-controls="site-menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <g
+            class="menu-button__lines"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          >
+            <path d="M2 4h20M2 12h20M2 20h20" />
+          </g>
+          <g
+            class="menu-button__close"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          >
+            <path d="m5 5 14 14M19 5 5 19" />
+          </g>
+        </svg>
+      </button>
+
+      <nav id="site-menu" class="site-menu" aria-label="Основная навигация">
         <ul>
+          <li class="menu-home">
+            <a href="./index.html" aria-current="page">Главная</a>
+          </li>
           <li><a href="./pages/about.html">О нас</a></li>
           <li>
             <a href="./pages/cases/conversion__paradox.html">Кейс</a>
@@ -27,12 +59,12 @@
         <div class="columns" aria-hidden="true"></div>
 
         <h1 id="contact-title" class="contact__title">
-          Пруфит — медиа с кейсами
+          Пруфит — медиа с&nbsp;кейсами
           <span>команд продуктовых аналитиков</span>
         </h1>
 
         <p class="contact__intro">
-          Подпишитесь, чтобы не пропустить запуск,
+          Подпишитесь, чтобы не&nbsp;пропустить запуск,
           <span>
             новые статьи, подкасты и разборы кейсов продуктовых аналитиков
           </span>

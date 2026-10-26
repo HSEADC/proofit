@@ -4,6 +4,24 @@ const contact = document.querySelector('.contact')
 const columnsContainer = document.querySelector('.columns')
 
 if (contact && columnsContainer) {
+  const mobile = window.matchMedia('(max-width: 767px)')
+  const mobileSettings = [
+    { start: 7, min: 4, max: 10 },
+    { start: 25, min: 19, max: 27 },
+    { start: 12, min: 8, max: 16 },
+    { start: 17, min: 13, max: 21 },
+    { start: 9, min: 5, max: 13 },
+    { start: 2, min: 1, max: 5 },
+    { start: 1, min: 0, max: 3 }
+  ]
+
+  function mobileWave(setting, index, elapsed, duration) {
+    const progress = (setting.start - setting.min) / (setting.max - setting.min)
+    const initialPhase = Math.asin(progress * 2 - 1)
+    const phase = index % 2 === 0 ? initialPhase : Math.PI - initialPhase
+    return (Math.sin(elapsed / duration * Math.PI * 2 + phase) + 1) / 2
+  }
+
   const colors = ['#D9E4FF', '#B8EF31', '#93B2FF']
 
   const columnCount = 14
@@ -61,11 +79,11 @@ if (contact && columnsContainer) {
   const socials = contact.querySelector('.socials')
 
   function animate(time) {
-    const rem = parseFloat(getComputedStyle(columns[0].element).rowGap) / 6
-
-    const dotSize = 6 * rem
-    const rowGap = 6 * rem
-    const safeGap = 24 * rem
+    const rootRem = parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const rowGap = parseFloat(getComputedStyle(columns[0].element).rowGap)
+    const rem = mobile.matches ? rootRem : rowGap / 6
+    const dotSize = (mobile.matches ? 3 : 6) * rem
+    const safeGap = (mobile.matches ? 16 : 24) * rem
     const maxHeight = 300 * rem
 
     const area = columnsContainer.getBoundingClientRect()
@@ -83,6 +101,8 @@ if (contact && columnsContainer) {
     const rowCounts = columns.map((column, index) => {
       const rect = columnRects[index]
 
+      if (rect.width === 0) return 0
+
       const isEdge = index === 0 || index === columns.length - 1
 
       const heightLimit = isEdge ? 360 * rem : maxHeight
@@ -93,7 +113,7 @@ if (contact && columnsContainer) {
         rect.right > formRect.left - safeGap &&
         rect.left < formRect.right + safeGap
 
-      if (isUnderForm) {
+      if (!mobile.matches && isUnderForm) {
         const heightBelowSocials = area.bottom - socialsRect.bottom - 60 * rem
 
         availableHeight = Math.min(availableHeight, heightBelowSocials)
@@ -119,6 +139,14 @@ if (contact && columnsContainer) {
       )
 
       const elapsed = time - startTime
+
+      if (mobile.matches) {
+        const setting = mobileSettings[index]
+        if (!setting) return 0
+        const wave = mobileWave(setting, index, elapsed, column.duration)
+        const desiredRows = Math.round(setting.min + wave * (setting.max - setting.min))
+        return Math.min(desiredRows, maxRows)
+      }
 
       const wave =
         (Math.sin((elapsed / column.duration) * Math.PI * 2 + column.phase) +

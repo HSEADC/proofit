@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Как «Сравни» связал аналитику и выручку — Пруфит</title>
+    <link rel="icon" href="./images/icon.png" type="image/png" />
+    <link rel="icon" href="./images/icon.ico" type="image/x-icon" />
   </head>
 
   <body class="case">
@@ -13,8 +15,36 @@
         <span class="brand__name">Пруфит</span>
       </a>
 
-      <nav aria-label="Основная навигация">
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Открыть меню"
+        aria-controls="site-menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <g
+            class="menu-button__lines"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          >
+            <path d="M2 4h20M2 12h20M2 20h20" />
+          </g>
+          <g
+            class="menu-button__close"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          >
+            <path d="m5 5 14 14M19 5 5 19" />
+          </g>
+        </svg>
+      </button>
+
+      <nav id="site-menu" class="site-menu" aria-label="Основная навигация">
         <ul>
+          <li class="menu-home"><a href="../../index.html">Главная</a></li>
           <li>
             <a href="../about.html">О&nbsp;нас</a>
           </li>
@@ -26,8 +56,6 @@
     </header>
 
     <main>
-      <!-- Первый экран -->
-
       <section class="case-hero" aria-labelledby="case-title">
         <div class="columns" aria-hidden="true">
           <div class="columns__group columns__group--left"></div>
@@ -299,12 +327,23 @@
 
       <section class="subscribe" aria-labelledby="subscribe-title">
         <h2 id="subscribe-title" class="subscribe__title">
-          Узнайте первыми о&nbsp;запуске!
+          <span class="subscribe__desktop"
+            >Узнайте первыми о&nbsp;запуске!</span
+          >
+          <span class="subscribe__mobile"
+            >Узнавайте первыми<br />о&nbsp;новых статьях</span
+          >
         </h2>
 
         <p class="subscribe__text">
-          Подпишитесь, чтобы не&nbsp;пропустить запуск, новые статьи
-          и&nbsp;подкасты о&nbsp;кейсах продуктовых аналитиков.
+          <span class="subscribe__desktop"
+            >Подпишитесь, чтобы не&nbsp;пропустить запуск, новые статьи
+            и&nbsp;подкасты о&nbsp;кейсах продуктовых аналитиков.</span
+          >
+          <span class="subscribe__mobile"
+            >Расскажем о&nbsp;запуске, новых кейсах и&nbsp;полезных
+            материалах.</span
+          >
         </p>
 
         <form

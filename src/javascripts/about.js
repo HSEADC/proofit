@@ -8,6 +8,24 @@ const leftGroup = container?.querySelector('.columns__group--left')
 const rightGroup = container?.querySelector('.columns__group--right')
 
 if (hero && container && leftGroup && rightGroup) {
+  const mobile = window.matchMedia('(max-width: 767px)')
+  const mobileSettings = [
+    { start: 7, min: 4, max: 10 },
+    { start: 25, min: 19, max: 27 },
+    { start: 12, min: 8, max: 16 },
+    { start: 17, min: 13, max: 21 },
+    { start: 9, min: 5, max: 13 },
+    { start: 2, min: 1, max: 5 },
+    { start: 1, min: 0, max: 3 }
+  ]
+
+  function mobileWave(setting, index, elapsed, duration) {
+    const progress = (setting.start - setting.min) / (setting.max - setting.min)
+    const initialPhase = Math.asin(progress * 2 - 1)
+    const phase = index % 2 === 0 ? initialPhase : Math.PI - initialPhase
+    return (Math.sin((elapsed / duration) * Math.PI * 2 + phase) + 1) / 2
+  }
+
   const isCase = hero.classList.contains('case-hero')
 
   const settings = isCase
@@ -34,6 +52,10 @@ if (hero && container && leftGroup && rightGroup) {
         { color: '#D9E4FF', start: 8, min: 4, max: 11 }
       ]
 
+  if (isCase) {
+    settings.push({ color: '#E2FF98', start: 1, min: 0, max: 3 })
+  }
+
   const protectedElements = hero.querySelectorAll(
     '.about-hero__title, .about-hero__text, ' +
       '.case-hero__title, .case-hero__summary'
@@ -44,7 +66,8 @@ if (hero && container && leftGroup && rightGroup) {
     element.className = 'columns__item'
     element.style.color = setting.color
 
-    const group = index < settings.length / 2 ? leftGroup : rightGroup
+    const group =
+      index < (isCase ? 3 : settings.length / 2) ? leftGroup : rightGroup
     group.append(element)
 
     const progress = (setting.start - setting.min) / (setting.max - setting.min)
@@ -90,11 +113,11 @@ if (hero && container && leftGroup && rightGroup) {
     const rootStyles = getComputedStyle(document.documentElement)
     const rem = parseFloat(rootStyles.fontSize)
 
-    const dotSize = 6 * rem
+    const dotSize = (mobile.matches ? 3 : 6) * rem
 
     const rowGap = parseFloat(getComputedStyle(columns[0].element).rowGap)
 
-    const safeGap = parseFloat(rootStyles.getPropertyValue('--space-24')) * rem
+    const safeGap = (mobile.matches ? 16 : 24) * rem
 
     const area = container.getBoundingClientRect()
 
@@ -133,6 +156,19 @@ if (hero && container && leftGroup && rightGroup) {
       )
 
       const elapsed = time - startTime
+
+      if (mobile.matches) {
+        const mobileIndex = isCase
+          ? index
+          : [0, 1, 2, 3, 4, 7, 9].indexOf(index)
+        const setting = mobileSettings[mobileIndex]
+        if (!setting) return 0
+        const wave = mobileWave(setting, mobileIndex, elapsed, column.duration)
+        const desiredRows = Math.round(
+          setting.min + wave * (setting.max - setting.min)
+        )
+        return Math.min(desiredRows, safeRows)
+      }
 
       const wave =
         (Math.sin((elapsed / column.duration) * Math.PI * 2 + column.phase) +
